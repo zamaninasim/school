@@ -28,7 +28,26 @@ public class Main {
         System.out.println(teacherService.addSchoolForTeacher("61651",school1));
         System.out.println(teacherService.addSchoolForTeacher("01565",school2));
 
+        System.out.println("*****************addCourseForTeacher*****************");
+        System.out.println(teacherService.addCourseForTeacher("01565",course2));
+        System.out.println(teacherService.addCourseForTeacher("01565",course1));
+        System.out.println(teacherService.addCourseForTeacher("01565",course3));
+        System.out.println(teacherService.addCourseForTeacher("64522",course2));
 
+        System.out.println("****************findTeachersHaveSalaryMoreThanAverage******************");
+        teacherService.findTeachersHaveSalaryMoreThanAverage().forEach(System.out::println);
+
+        System.out.println("****************findTeachersWhit10YearExperience******************");
+        teacherService.findTeachersWhit10YearExperience().forEach((i, j) -> System.out.println(i + ":" + j));
+
+        System.out.println("****************findPartTeachersWhitBSDegreeAndDegree2SchoolAndMoreThan2Course******************");
+        teacherService.findPartTeachersWhitBSDegreeAndDegree2SchoolAndMoreThan2Course().forEach(System.out::println);
+
+        System.out.println("*****************findSchoolsByTeachersList*****************");
+        teacherService.findSchoolsByTeachersList().forEach(System.out::println);
+
+        System.out.println("*****************findSchoolsTeacher*****************");
+        teacherService.findSchoolsTeacher(teacherService.findSchoolsByTeachersList()).forEach((i, j) -> System.out.println(i + ":" + j));
     }
 
 }
